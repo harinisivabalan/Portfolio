@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background: #121212;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+        }
+
+        /* Header Section */
+        header {
+            background: #1e1e1e;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: #e63946;
+        }
+
+        nav a {
+            color: #f1faee;
+            margin-left: 20px;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: #e63946;
+        }
+
+        /* Animated Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, #e63946, #1e1e1e, #e63946);
+            background-size: 300% 300%;
+            animation: moveGradient 10s infinite;
+            z-index: -2;
+        }
+
+        @keyframes moveGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #e63946;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #f1faee;
+            animation: fadeInUp 3s ease-in-out;
+        }
+
+        .hero a {
+            background: #e63946;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            border-radius: 25px;
+            transition: background 0.3s;
+            animation: fadeInUp 4s ease-in-out;
+        }
+
+        .hero a:hover {
+            background: #f77f82;
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 50px 20px;
+            background: #121212;
+            text-align: center;
+        }
+
+        .skills h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #e63946;
+        }
+
+        .skills ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .skills li {
+            font-size: 1.1rem;
+            color: #f1faee;
+            text-align: center;
+        }
+
+        .skills img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+            animation: float 4s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* New Skills */
+        .skills li p {
+            margin-top: 5px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 50px 20px;
+            background: #1e1e1e;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #e63946;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            color: #f1faee;
+            line-height: 1.8;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Certifications Section */
+        .certifications {
+            padding: 50px 20px;
+            background: #121212;
+            text-align: center;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .certifications h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #e63946;
+        }
+
+        .certifications ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .certifications li {
+            font-size: 1.1rem;
+            color: #f1faee;
+            text-align: center;
+            margin: 10px;
+        }
+
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateX(-50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 50px 20px;
+            background: #1e1e1e;
+            text-align: center;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .projects h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #e63946;
+        }
+
+        .projects .project-card {
+            background: #333;
+            padding: 20px;
+            width: 250px;
+            margin: 15px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .projects .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .projects img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 50px 20px;
+            background: #121212;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #e63946;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact input, .contact textarea {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: #333;
+            color: #f1faee;
+        }
+
+        .contact button {
+            padding: 10px 20px;
+            background: #e63946;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .contact button:hover {
+            background: #f77f82;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Harini's Portfolio</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <img src="harini.jpg" alt="Harini's Photo" style="width: 150px; height: 150px;">
+        <h1>Hi, I'm Harini</h1>
+        <p>A Passionate Developer and Designer</p>
+        <a href="#contact">Get in Touch</a>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>My Skills</h2>
+        <ul>
+            <li>
+                <img src="htmml.jfif" alt="HTML">
+                <p>HTML5</p>
+            </li>
+            <li>
+                <img src="python logo.jfif" alt="Python">
+                <p>Python</p>
+            </li>
+            <li>
+                <img src="java.jfif" alt="Java">
+                <p>Java</p>
+            </li>
+            <li>
+                <img src="C Programming Language Logo, HD Png Download , Transparent Png Image - PNGitem.jfif" alt="C">
+                <p>C and C++</p>
+            </li>
+            <li>
+                <img src="css.png" alt="CSS">
+                <p>CSS</p>
+            </li>
+            <li>
+                <img src="js.png" alt="JavaScript">
+                <p>JavaScript</p>
+            </li>
+        </ul>
+    </section>
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+            I'm a full-stack developer with a passion for both coding and design. I love creating innovative
+            solutions and user-friendly interfaces. I constantly strive to learn and grow in my field, adapting to
+            new challenges and technologies.
+        </p>
+    </section>
+<section id="certifications" class="certifications">
+    <h2>Certifications</h2>
+    <ul>
+        
+        <li>
+            <img src="pythoncert (1).png" alt="Python Certification" style="width: 300px; height: 300px;">
+            Python for Data Science Certification
+        </li>
+        <li>
+            <img src="ds.png" alt="Data Structures in C Certification" style="width: 300px; height: 300px;">
+            C Development Certification
+        </li>
+    </ul>
+</section>
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-card">
+            <img src="India seems to be gaining as attractive investment point_ SBI Ecowrap.jfif" alt="Project 1">
+            <h3>Project 1</h3>
+            <p>Bank Management System.</p>
+        </div>
+        <div class="project-card">
+            <img src="20 Best Korean BBQ Restaurants In New York City You Need to Try.jfif" alt="Project 2">
+            <h3>Project 2</h3>
+            <p>Restaurent Ordering System.</p>
+        </div>
+        <div class="project-card">
+            <img src="The Ultimate Guide to Bookshops in York.jfif" alt="Project 3">
+            <h3>Project 3</h3>
+            <p>Library Management System.</p>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <footer>
+        &copy; 2025 Harini's Portfolio. All Rights Reserved.
+    </footer>
+</body>
+
+</html>
